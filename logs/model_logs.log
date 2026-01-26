@@ -1,0 +1,3 @@
+{"timestamp": "Friday 23/01/2026 06:41:07", "level": "INFO", "message": "Valid", "type": "model-load", "session_id": "57e593efd88c4009a7060d00c38a87cd", "chat_id": "a972a5ac3f5f4905bc7c23f7a2fa2a5a", "status_code": 200, "model_id": "llama-3.1-8b-instant"}
+{"timestamp": "Friday 23/01/2026 06:54:21", "level": "INFO", "message": "Valid", "type": "model-load", "session_id": "57e593efd88c4009a7060d00c38a87cd", "chat_id": "a972a5ac3f5f4905bc7c23f7a2fa2a5a", "status_code": 200, "model_id": "llama-3.1-8b-instant"}
+{"timestamp": "Friday 23/01/2026 06:54:41", "level": "INFO", "message": "Valid", "type": "model-load", "session_id": "57e593efd88c4009a7060d00c38a87cd", "chat_id": "a972a5ac3f5f4905bc7c23f7a2fa2a5a", "status_code": 200, "model_id": "llama-3.1-8b-instant"}
