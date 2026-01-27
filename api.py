@@ -9,7 +9,7 @@ import uuid
 import uvicorn
 import subprocess
 
-subprocess.run(["python", "API Design/utils/providers/database.py"])
+subprocess.run(["python", "utils/providers/database.py"])
 
 model = UModel()
 

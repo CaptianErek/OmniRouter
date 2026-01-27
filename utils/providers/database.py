@@ -79,6 +79,7 @@ class Response(Base):
 
 class Memory(Base):
     __tablename__ = "memory"
+    id = Column(VARCHAR(50),primary_key=True)
     user_id = Column(VARCHAR(50),ForeignKey("users.id"))
     memory_type = Column(VARCHAR(50))
     key = Column(TEXT)
@@ -91,7 +92,7 @@ class Memory(Base):
         CheckConstraint(
             "memory_type in ('facts','style','preferences','goal','rules')",
             name="memory_type_check"
-        )
+        ),
     )
 
     def __repr__(self):
@@ -99,6 +100,7 @@ class Memory(Base):
 
 class Buffer(Base):
     __tablename__ = "buffer"
+    id = Column(VARCHAR(50),primary_key=True)
     user_id = Column(VARCHAR(50),ForeignKey("users.id"))
     memory_type = Column(VARCHAR(50))
     key = Column(TEXT)
@@ -109,7 +111,7 @@ class Buffer(Base):
         CheckConstraint(
             "memory_type in ('facts','style','preferences','goal','rules')",
             name="buffer_memory_type_check"
-        )
+        ),
     )
 
     def __repr__(self):
