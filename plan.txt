@@ -1,9 +1,3 @@
-1> Correct the API Done
-    a> Correct the model storage Done
-    b> Correct the session storage Done
-    c> Correct the chat storage Done
-    d> Correct the request storage Done
-    e> Correct the response storage Done
-2> Implement Short Term Memory (Seprate File)
-    a> Implement Short Term Memory (Seprate File)
-    b> Implement Long Term Memory (Seprate File)
+1> Update Logger to incorporate long term Memory
+2> Add in buffer
+3> How can I store embedings and then later retrive them 

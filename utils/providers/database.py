@@ -79,10 +79,10 @@ class Response(Base):
 
 class Memory(Base):
     __tablename__ = "memory"
-    id = Column(VARCHAR(50),primary_key=True)
-    user_id = Column(VARCHAR(50),ForeignKey("users.id"))
+    id = Column(VARCHAR(50), primary_key=True)
+    user_id = Column(VARCHAR(50), ForeignKey("users.id"), primary_key=True)
     memory_type = Column(VARCHAR(50))
-    key = Column(TEXT)
+    key = Column(TEXT, primary_key=True)
     value = Column(TEXT)
     confidence = Column(Float)
     source_count = Column(BigInteger)
@@ -90,7 +90,7 @@ class Memory(Base):
 
     __table_args__ = (
         CheckConstraint(
-            "memory_type in ('facts','style','preferences','goal','rules')",
+            "memory_type in ('facts','style','preferences','goal','rules','preferred tone','name','age','language spoken','risk level','response length preference','habits')",
             name="memory_type_check"
         ),
     )
@@ -100,16 +100,16 @@ class Memory(Base):
 
 class Buffer(Base):
     __tablename__ = "buffer"
-    id = Column(VARCHAR(50),primary_key=True)
-    user_id = Column(VARCHAR(50),ForeignKey("users.id"))
+    user_id = Column(VARCHAR(50), ForeignKey("users.id"), primary_key=True)
     memory_type = Column(VARCHAR(50))
     key = Column(TEXT)
     value = Column(TEXT)
+    confidence = Column(Float)
     seen_at = Column(DateTime(timezone=True),server_default=func.now())
 
     __table_args__ = (
         CheckConstraint(
-            "memory_type in ('facts','style','preferences','goal','rules')",
+            "memory_type in ('facts','style','preferences','goal','rules','preferred tone','name','age','language spoken','risk level','response length preference','habits')",
             name="buffer_memory_type_check"
         ),
     )

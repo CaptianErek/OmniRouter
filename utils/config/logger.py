@@ -225,7 +225,7 @@ def log_connection(message:str):
     
     elif message.casefold() == "offline".casefold():
         connection_logger.error(message)
-def log_memory(message:str, session_id : str, chat_id : str, user_id : str, status_code : int,error_message : Optional[str] = None, error_type : Optional[str] = None,memory_type : Optional[str] = "Short Term"):
+def log_memory(message:str, session_id : str, chat_id : str, user_id : str, status_code : int,error_message : Optional[str] = None, error_type : Optional[str] = None,memory_type : Optional[str] = "Short Term",category : Optional[str] = None,key : Optional[str] = None,value : Optional[str] = None,confidence : Optional[float] = None,evidence : Optional[str] = None):
     if message.casefold() == "valid".casefold():
         memory_logger.info(message,extra= {
             "session_id" : session_id,
@@ -235,6 +235,11 @@ def log_memory(message:str, session_id : str, chat_id : str, user_id : str, stat
             "error_type" : error_type,
             "error_message" : error_message,
             "memory_type" : memory_type,
+            "category" : category,
+            "key" : key,
+            "value" : value,
+            "confidence" : confidence,
+            "evidence" : evidence,
         })
     
     elif message.casefold() == "invalid".casefold():
@@ -246,4 +251,9 @@ def log_memory(message:str, session_id : str, chat_id : str, user_id : str, stat
             "error_type" : error_type,
             "error_message" : error_message,
             "memory_type" : memory_type,
+            "category" : category,
+            "key" : key,
+            "value" : value,
+            "confidence" : confidence,
+            "evidence" : evidence,
         })
