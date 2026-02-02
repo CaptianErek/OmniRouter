@@ -86,6 +86,7 @@ class Memory(Base):
     value = Column(TEXT)
     confidence = Column(Float)
     source_count = Column(BigInteger)
+    evidence = Column(TEXT)
     created_at = Column(DateTime(timezone=True),server_default=func.now())
 
     __table_args__ = (
@@ -100,12 +101,14 @@ class Memory(Base):
 
 class Buffer(Base):
     __tablename__ = "buffer"
-    user_id = Column(VARCHAR(50), ForeignKey("users.id"), primary_key=True)
+    id = Column(VARCHAR(50), primary_key=True)
+    user_id = Column(VARCHAR(50), ForeignKey("users.id"))
     memory_type = Column(VARCHAR(50))
     key = Column(TEXT)
     value = Column(TEXT)
     confidence = Column(Float)
     seen_at = Column(DateTime(timezone=True),server_default=func.now())
+    evidence = Column(TEXT)
 
     __table_args__ = (
         CheckConstraint(
